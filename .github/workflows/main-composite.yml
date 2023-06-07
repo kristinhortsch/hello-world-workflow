@@ -7,7 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: composite_action
-        # uses: ./.github/actions
         uses: kristinhortsch/hello-world-composite-action@v1.3.0
         with:
           who-to-greet: 'Ranger the Malamute'
