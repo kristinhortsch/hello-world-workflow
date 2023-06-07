@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  hello_world_composite_job:
+    runs-on: ubuntu-latest
+    name: A composite job to say hello
+    steps:
+      - uses: actions/checkout@v3
+      - id: composite_action
+        uses: kristinhortsch/hello-world-composite-action@v1
+        with:
+          who-to-greet: 'Ranger the Malamute'
+      - run: echo random-number ${{ steps.composite_action.outputs.random-number }}
+        shell: bash
