@@ -7,8 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: composite_action
-        uses: kristinhortsch/hello-world-composite-action@v1.2.0
+        uses: ./.github/actions
+        # uses: kristinhortsch/hello-world-composite-action@v1.2.0
         with:
           who-to-greet: 'Ranger the Malamute'
-      - run: echo random-number ${{ steps.composite_action.outputs.random-number }}
-        shell: bash
+      # - run: echo random-number ${{ steps.composite_action.outputs.random-number }}
+      #   shell: bash
